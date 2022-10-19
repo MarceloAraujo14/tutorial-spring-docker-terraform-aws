@@ -16,4 +16,5 @@ This level will teach you how to :
 - configure your image to docker-compose file 
 - run your image on a docker container
 - Access your application using swagger and postman
+- Upload your api image to dockerhub
 
