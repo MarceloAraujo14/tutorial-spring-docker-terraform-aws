@@ -1,0 +1,41 @@
+version: '3'
+
+services:
+  postgres-db:
+    container_name: postgres-db
+    image: postgres
+    environment:
+      POSTGRES_USER: "admin"
+      POSTGRES_PASSWORD: "admin"
+      POSTGRES_DB: "contactbook"
+      TZ: "America/Sao_Paulo"
+    ports:
+      - "15432:5432"
+    networks:
+      - docker-network
+    restart: always
+
+  contact-book:
+    container_name: contact-book
+    image: marceloaraujo14/contact-book-api:latest
+    environment:
+      SERVER_PORT: 3000
+      SPRING_PROFILES_ACTIVE: prod
+      TZ: "America/Sao_Paulo"
+    ports:
+      - "80:3000"
+    depends_on:
+      - postgres-db
+    networks:
+      - docker-network
+    deploy:
+      resources:
+        limits:
+          memory: 600M
+        reservations:
+          memory: 600M
+    restart: always
+
+networks:
+  docker-network:
+    driver: bridge
