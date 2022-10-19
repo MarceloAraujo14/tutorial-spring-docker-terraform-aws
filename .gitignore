@@ -35,3 +35,16 @@ out/
 
 ### VS Code ###
 .vscode/
+
+# Local terraform directories
+.terraform/
+
+# State files
+*.tfstate
+.tfstate.
+
+# Crash log files
+*.log
+
+# Sensitive data
+*.tfvars
