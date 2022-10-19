@@ -48,3 +48,8 @@ dependencyManagement {
 tasks.named('test') {
 	useJUnitPlatform()
 }
+
+
+bootBuildImage{
+	imageName = "contact-book-api"
+}

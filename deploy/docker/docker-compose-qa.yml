@@ -15,15 +15,15 @@ services:
       - docker-network
     restart: always
 
-  pgadmin:
-    container_name: pgadmin
-    image: dpage/pgadmin4
-    environment:
-      PGADMIN_DEFAULT_EMAIL: "admin@gmail.com"
-      PGADMIN_DEFAULT_PASSWORD: "admin"
-      TZ: "America/Sao_Paulo"
+  contact-book:
+    container_name: contact-book
+    image: contact-book-api:latest
     ports:
-      - "16543:80"
+      - "80:3000"
+    environment:
+      SERVER_PORT: 3000
+      SPRING_PROFILES_ACTIVE: qa
+      TZ: "America/Sao_Paulo"
     depends_on:
       - postgres-db
     networks:

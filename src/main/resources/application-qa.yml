@@ -16,7 +16,7 @@ spring:
 
   #database config
   datasource:
-    url: jdbc:postgresql://postgres-db:5432/contactBook?currentSchema=public
+    url: jdbc:postgresql://postgres-db:5432/contactbook?currentSchema=public
     username: "admin"
     password: "admin"
     driver-class-name: "org.postgresql.Driver"
