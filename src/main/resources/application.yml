@@ -1,34 +1,35 @@
-#arquivo de configurações local/default
+#arquivo de configuracoes local/default
 
-#configuração de porta
+#configuracao de porta
 server:
   port: 8090
 
-#define qual arquivo será rodado com base no profile
 spring:
-  config:
-    activate:
-      on-profile:
-        - local
+  application:
+    name: "contactbook"
 
-#configurações de banco de dados
+#configuracoes de banco de dados
   datasource:
-    url: "jdbc:postgresql://localhost:15432/contactBook?currentSchema=public"
+    url: jdbc:postgresql://localhost:15432/contactbook?currentSchema=public
     username: "admin"
     password: "admin"
     driver-class-name: "org.postgresql.Driver"
+    hikari:
+      schema: public
 
   jpa:
+    hibernate:
+      ddl-auto: update
     properties:
       hibernate:
-        dialect: "org.hibernate.dialect.PostgreSQLDialect"
+        dialect: org.hibernate.dialect.PostgreSQLDialect
 
-#configuração do flyway
+#configuracao do flyway
   flyway:
     locations: "db/migration"
     baseline-on-migrate: false
 
-#configuração swagger
+#configuracao swagger
 springdoc:
   swagger-ui:
     path: "/contactbook/swagger-ui.html"

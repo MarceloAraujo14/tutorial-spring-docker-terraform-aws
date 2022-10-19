@@ -1,10 +1,12 @@
 package com.maraujo.contactbook.controller.request;
 
 import com.maraujo.contactbook.entity.Contact;
-import lombok.Builder;
-import lombok.Data;
+import lombok.*;
 
-@Data
+@Getter
+@Setter
+@AllArgsConstructor
+@RequiredArgsConstructor
 @Builder
 public class ContactRequest {
     private String name;
@@ -16,7 +18,7 @@ public class ContactRequest {
         return Contact.builder()
                 .name(name)
                 .phone(phone)
-                .cep(cep)
+                .cep(cep.contains("-")? cep.replace("-", ""): cep)
                 .numero(numero)
                 .build();
     }
