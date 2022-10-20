@@ -18,3 +18,14 @@ This level will teach you how to :
 - Access your application using swagger and postman
 - Upload your api image to dockerhub
 
+**Level 3**
+This level will teach you: 
+- Understanding AWS basic infraestructure
+- Create IAM user
+- Configure aws cli profile
+- Create terraform files needed
+- Create ssh key pair
+- Configure userdata template file
+- Terraform commands
+- Access ec2 host from local machine
+- Access your api running on ec2 using swagger and postman
