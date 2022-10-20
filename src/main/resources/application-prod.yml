@@ -1,0 +1,46 @@
+#arquivo de configuracoes local/default
+
+#port config
+server:
+  port: ${SERVER_PORT}
+
+#profile config
+spring:
+  application:
+    name: "contactbook"
+
+  config:
+    activate:
+      on-profile:
+        - prod
+
+  #database config
+  datasource:
+    url: jdbc:postgresql://postgres-db:5432/contactbook?currentSchema=public
+    username: "admin"
+    password: "admin"
+    driver-class-name: "org.postgresql.Driver"
+
+  jpa:
+    properties:
+      hibernate:
+        dialect: org.hibernate.dialect.PostgreSQLDialect
+
+  #flyway config
+  flyway:
+    locations: "db/migration"
+    baseline-on-migrate: false
+
+  #devtools config
+  devtools:
+    restart:
+      enabled: true
+
+#swagger config
+springdoc:
+  swagger-ui:
+    path: "/contactbook/swagger-ui.html"
+
+#viacep ulr endpoint
+viacep:
+  endpoint: "viacep.com.br/ws"
