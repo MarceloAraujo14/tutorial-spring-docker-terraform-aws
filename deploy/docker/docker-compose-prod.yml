@@ -31,9 +31,9 @@ services:
     deploy:
       resources:
         limits:
-          memory: 600M
+          memory: 700M
         reservations:
-          memory: 600M
+          memory: 700M
     restart: always
 
 networks:
