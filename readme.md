@@ -21,7 +21,7 @@ This level will teach you how to :
 - Upload your api image to dockerhub
 
 **Level 3**
-<img src=diagram/tutorial-diagram-level-1.jpg>
+<img src=diagram/tutorial-diagram-level-3.jpg>
 
 This level will teach you: 
 - Understanding AWS basic infraestructure
