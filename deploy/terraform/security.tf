@@ -33,10 +33,10 @@ resource "aws_key_pair" "contactbook_key" {
   public_key = file("~/.ssh/contactbook_key.pub")
 }
 
-resource "aws_security_group_rule" "public_in_https" {
+resource "aws_security_group_rule" "public_in_http" {
   type              = "ingress"
-  from_port         = 443
-  to_port           = 443
+  from_port         = 80
+  to_port           = 80
   protocol          = "tcp"
   cidr_blocks       = ["0.0.0.0/0"]
   security_group_id = aws_security_group.contactbook_sg.id
